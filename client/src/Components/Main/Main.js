@@ -1,13 +1,15 @@
 import React from 'react'
 import Searchbar from '../Searchbar/Searchbar.js'
 import ImageList from '../ImageList/ImageList'
+import {Spinner} from 'react-bootstrap'
 class Main extends React.Component {
 	constructor(props) {
 		super(props)
 	
 		this.state = {
 			 randomImage:"",
-			 searchResults:{}
+			 searchResults:{},
+			 isLoading:false
 		}
 	}
 	
@@ -15,16 +17,19 @@ class Main extends React.Component {
 		this.setState((prev)=>{
 			if(prev.key !== value)
 				return({
-					[key]:value
+					isLoading:!prev.isLoading,
+					[key]:value,
 				})
 		})
+		console.log(this.state.searchResults)
 	}
 
 	render(){
 		return (
 			<div id="main">
-				<Searchbar updateState={this.updateState}></Searchbar>
-				<ImageList images={this.state.searchResults.results}></ImageList>
+				<Searchbar updateState={this.updateState} isLoading={this.state.isLoading}></Searchbar>
+				{this.state.isLoading?<Spinner animation='border'></Spinner>
+				:<ImageList images={this.state.searchResults.results}></ImageList>}
 			</div>
 		)
 	}
