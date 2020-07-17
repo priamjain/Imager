@@ -12,10 +12,12 @@ class Main extends React.Component {
 	}
 	
 	updateState = (key,value)=>{
-		this.setState({
-			[key]:value
+		this.setState((prev)=>{
+			if(prev.key !== value)
+				return({
+					[key]:value
+				})
 		})
-		console.log(this.state.searchResults.results);
 	}
 
 	render(){

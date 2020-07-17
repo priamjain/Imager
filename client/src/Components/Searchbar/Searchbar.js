@@ -19,9 +19,9 @@ function Searchbar(props) {
 	}
 	return (
 		<div className="d-flex justify-content-center w-100 p-3">
-			<Form inline className="w-50">
+			<Form inline className="w-50" onSubmit={handleSubmit}>
 				<FormControl type="text" placeholder="Search..." className="mr-sm-2 w-50" onChange={(e)=>setsearchText(e.target.value)} value={searchText}></FormControl>
-				<Button variant="outline-success" className="w-25" onClick={handleSubmit}>Search</Button>
+				<Button type="submit" variant="outline-success" className="w-25">Search</Button>
 			</Form>
 		</div>
 	)
