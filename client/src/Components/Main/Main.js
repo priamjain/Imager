@@ -26,7 +26,7 @@ class Main extends React.Component {
 
 	render(){
 		return (
-			<div id="main">
+			<div id="main" className="d-flex flex-column">
 				<Searchbar updateState={this.updateState} isLoading={this.state.isLoading}></Searchbar>
 				{this.state.isLoading?<Spinner animation='border'></Spinner>
 				:<ImageList images={this.state.searchResults.results}></ImageList>}
