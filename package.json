@@ -1,0 +1,19 @@
+{
+  "name": "imager",
+  "version": "1.0.0",
+  "description": "Image search and Save App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priamjain/Imager.git"
+  },
+  "author": "CRYP70N1K",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/priamjain/Imager/issues"
+  },
+  "homepage": "https://github.com/priamjain/Imager#readme"
+}
