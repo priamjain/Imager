@@ -8,16 +8,15 @@ function ImageList(props) {
 	{
 		allImages = props.images.map((image)=>{
 			return(
-				<div>
+				<div key={image.id}>
 					<Card 
-					key={image.id}
 					style={{width:'30em'}} 
 					className={"p-1 m-2"} 
 					border={borders[Math.floor(Math.random()*8)]}
 					>
 						<Card.Img src={image.urls.small} atl=""></Card.Img>
 						<Card.ImgOverlay className="d-flex flex-row justify-content-end">
-							<PhotoOptions></PhotoOptions>		
+							<PhotoOptions image={image}></PhotoOptions>		
 						</Card.ImgOverlay>
 					</Card>
 					
