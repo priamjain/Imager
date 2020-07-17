@@ -4,7 +4,7 @@
   "description": "Image search and Save App",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "npm start --prefix client"
   },
   "repository": {
     "type": "git",
