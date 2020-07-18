@@ -13,14 +13,15 @@ function PhotoOptions(props) {
 			}
 		})
 		.then((res)=>res.json())
-		.then((blob)=>download(blob.url))
+		.then((blob)=>{download(blob.url);console.log("downloading started");})
+		.then(()=>console.log("downloaded"))
 		
 	}
 
 	return (
 		<div className="d-flex flex-column">
 			<Button variant="success rounded-0" onClick={downloadHandle}>D</Button>
-			<Button variant="light rounded-0">L</Button>
+			<Button variant="light rounded-0" onClick={()=>props.addToLiked(props.image)}>L</Button>
 		</div>
 	)
 }

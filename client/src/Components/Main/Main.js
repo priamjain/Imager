@@ -26,10 +26,10 @@ class Main extends React.Component {
 
 	render(){
 		return (
-			<div id="main" className="d-flex flex-column">
+			<div id="main" className="d-flex flex-column align-items-center">
 				<Searchbar updateState={this.updateState} isLoading={this.state.isLoading}></Searchbar>
 				{this.state.isLoading?<Spinner animation='border'></Spinner>
-				:<ImageList images={this.state.searchResults.results}></ImageList>}
+				:<ImageList addToLiked={this.props.addToLiked} images={this.state.searchResults.results}></ImageList>}
 			</div>
 		)
 	}
