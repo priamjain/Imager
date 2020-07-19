@@ -23,15 +23,25 @@ class App extends React.Component {
 					[key]:value,
 				})
 		})
-		console.log(this.state)
 	}
-	addToLiked = (id)=>this.setState((prev) => ({liked:[...prev.liked,id]}))
+	addToLiked = (image)=>this.setState((prev) => ({liked:[...prev.liked,image]}))
+	deleteFromLiked = (image)=>{
+		this.setState(prev=>({liked:prev.liked.filter(img => img.id!==image.id)}));
+	};
 	render(){
 		return (
 			<div className="App">
-				<Header updateState={this.updateState} isLoading={this.state.isLoading} currentPage={this.state.currentPage}></Header>
+				<Header updateState={this.updateState} currentPage={this.state.currentPage}></Header>
 
-				<Main currentPage={this.state.currentPage} addToLiked={this.addToLiked} searchResults={this.state.searchResults} liked={this.state.liked}></Main>
+				<Main 
+				isLoading={this.state.isLoading}
+				currentPage={this.state.currentPage} 
+				addToLiked={this.addToLiked} 
+				searchResults={this.state.searchResults} 
+				liked={this.state.liked}
+				deleteFromLiked={this.deleteFromLiked}
+				>
+				</Main>
 			</div>
 			);
 	}

@@ -9,7 +9,7 @@ var Header = (props)=> {
 			<Navbar bg="transparent" expand="md"  className='flex-row justify-content-center'>
 				<Navbar.Brand className='order-1'>Imager</Navbar.Brand>
 				<Nav className='order-last order-md-2'>
-					<Searchbar updateState={props.updateState} isLoading={props.isLoading}></Searchbar>
+					<Searchbar updateState={props.updateState}></Searchbar>
 				</Nav>
 				<Nav className='order-2 order-md-3 flex-row'>
 					<Nav.Link  

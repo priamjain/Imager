@@ -13,7 +13,7 @@ function Main(props){
 				switch (props.currentPage) {
 					case 'Liked':
 						return(
-							<MyList liked={props.liked} currentPage={props.currentPage}></MyList>
+							<MyList liked={props.liked} currentPage={props.currentPage} deleteFromLiked={props.deleteFromLiked}></MyList>
 							)
 							
 					default: 

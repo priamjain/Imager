@@ -18,15 +18,11 @@ function PhotoOptions(props) {
 		
 	}
 
-	const deleteHandle = (e)=>{
-
-	}
-	
 	return (
 		<div className="d-flex flex-column">
 			{
 				props.currentPage === 'Liked'
-				?<Button variant="danger rounded-0" onClick={deleteHandle}>X</Button>
+				?<Button variant="danger rounded-0" onClick={()=>props.deleteFromLiked(props.image)}>X</Button>
 				:<Button variant="success rounded-0" onClick={downloadHandle}>D</Button>
 			}
 			<Button variant="light rounded-0" onClick={()=>props.addToLiked(props.image)}>L</Button>
