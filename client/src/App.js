@@ -11,7 +11,7 @@ class App extends React.Component {
 			searchResults:{},
 			liked :[],
 			isLoading:false,
-			currentPage:'search'
+			currentPage:'Search'
 		}
 	}
 
@@ -29,7 +29,7 @@ class App extends React.Component {
 	render(){
 		return (
 			<div className="App">
-				<Header updateState={this.updateState} isLoading={this.state.isLoading}></Header>
+				<Header updateState={this.updateState} isLoading={this.state.isLoading} currentPage={this.state.currentPage}></Header>
 
 				<Main currentPage={this.state.currentPage} addToLiked={this.addToLiked} searchResults={this.state.searchResults} liked={this.state.liked}></Main>
 			</div>

@@ -2,6 +2,7 @@ import React from 'react'
 import {Navbar,Nav} from 'react-bootstrap'
 import Searchbar from '../Searchbar/Searchbar'
 var Header = (props)=> {
+	const navigate = props.currentPage === 'Search' ? 'Liked':'Search';
 	return (
 		<div id="header" className="container ">
 			
@@ -12,17 +13,16 @@ var Header = (props)=> {
 				</Nav>
 				<Nav className='order-2 order-md-3 flex-row'>
 					<Nav.Link  
-					className='mr-sm-3 mr-md-0'
-					href="/Liked" 
+					className='mr-sm-3 mr-md-0' 
 					onClick={
 						(e)=>{
 							e.preventDefault();
-							props.updateState('currentPage','liked')
+							props.updateState('currentPage',navigate);
 						}
 					}>
-					Liked
+					{navigate}
 					</Nav.Link>
-					<Nav.Link  href="https://github.com/priamjain">Github</Nav.Link>
+					<Nav.Link href="https://github.com/priamjain">Github</Nav.Link>
 					
 				</Nav>
 			</Navbar>

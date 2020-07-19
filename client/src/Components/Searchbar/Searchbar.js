@@ -18,7 +18,7 @@ function Searchbar(props) {
 		})
 		.then(data=>data.json())
 		.then((data)=>props.updateState("searchResults",data))
-		.then((data)=>props.updateState("currentPage",'search'))
+		.then((data)=>props.updateState("currentPage",'Search'))
 		.catch((err)=>console.log(err))
 	}
 	return (

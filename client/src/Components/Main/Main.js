@@ -11,7 +11,7 @@ function Main(props){
 			}
 			else{
 				switch (props.currentPage) {
-					case 'liked':
+					case 'Liked':
 						return(
 							<MyList liked={props.liked}></MyList>
 							)
