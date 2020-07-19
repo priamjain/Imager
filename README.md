@@ -11,5 +11,5 @@ An Image Search and Save app with many features
 - [x] Search Images and display it
 - [ ] Random Image or Image of the Day
 - [x] Download Photos
-- [ ] Favourites Display, Add, Delete
+- [x] Favourites Display, Add, Delete
 - [ ] Authentication and Authorization
