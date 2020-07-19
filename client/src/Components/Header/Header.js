@@ -1,17 +1,32 @@
 import React from 'react'
 import {Navbar,Nav} from 'react-bootstrap'
-var Header = ()=> {
+import Searchbar from '../Searchbar/Searchbar'
+var Header = (props)=> {
 	return (
-		<div id="header">
-			<Navbar bg="transparent" expand="lg">
-				<Navbar.Brand>Imager</Navbar.Brand>
-				<Navbar.Toggle className="Toggle" area-control="navbar"></Navbar.Toggle>
-				<Navbar.Collapse id="navbar">
-					<Nav className="ml-auto">
-						<Nav.Link href="https://github.com/priamjain">Github</Nav.Link>
-					</Nav>
-				</Navbar.Collapse>
+		<div id="header" className="container ">
+			
+			<Navbar bg="transparent" expand="md"  className='flex-row justify-content-center'>
+				<Navbar.Brand className='order-1'>Imager</Navbar.Brand>
+				<Nav className='order-last order-md-2'>
+					<Searchbar updateState={props.updateState} isLoading={props.isLoading}></Searchbar>
+				</Nav>
+				<Nav className='order-2 order-md-3 flex-row'>
+					<Nav.Link  
+					className='mr-sm-3 mr-md-0'
+					href="/Liked" 
+					onClick={
+						(e)=>{
+							e.preventDefault();
+							props.updateState('currentPage','liked')
+						}
+					}>
+					Liked
+					</Nav.Link>
+					<Nav.Link  href="https://github.com/priamjain">Github</Nav.Link>
+					
+				</Nav>
 			</Navbar>
+
 		</div>
 	)
 }
