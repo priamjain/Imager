@@ -1,6 +1,6 @@
-# Imager [click-here](https://imager-in.herokuapp.com/)
+# Imager
 An Image Search and Save app with many features
-
+[click-here](https://imager-in.herokuapp.com/)
 ## Technologies Implements
 * Reactjs
 * Unsplash API
