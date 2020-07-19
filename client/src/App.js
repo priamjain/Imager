@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header/Header'
 import Main from './Components/Main/Main'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {Spinner} from 'react-bootstrap'
 class App extends React.Component {
 	constructor(props) {
 		super(props)
@@ -10,9 +11,15 @@ class App extends React.Component {
 		this.state = {
 			searchResults:{},
 			liked :[],
-			isLoading:false,
+			isLoading:true,
 			currentPage:'Search'
 		}
+	}
+
+	componentDidMount=()=>{
+		
+		console.log("loaded");
+		this.updateState('isLoading',false);
 	}
 
 	updateState = (key,value)=>{
@@ -29,8 +36,12 @@ class App extends React.Component {
 		this.setState(prev=>({liked:prev.liked.filter(img => img.id!==image.id)}));
 	};
 	render(){
-		return (
-			<div className="App">
+		if(this.state.isLoading){
+			return(<Spinner animation='border'></Spinner>)
+		}
+		else{
+			return(
+				<div className="App">
 				<Header updateState={this.updateState} currentPage={this.state.currentPage}></Header>
 
 				<Main 
@@ -44,6 +55,7 @@ class App extends React.Component {
 				</Main>
 			</div>
 			);
+		}
 	}
 }
 

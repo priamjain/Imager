@@ -19,13 +19,14 @@ function PhotoOptions(props) {
 	}
 
 	return (
-		<div className="d-flex flex-column">
+		<div className="d-flex flex-row mt-auto justify-content-between">
 			{
 				props.currentPage === 'Liked'
-				?<Button variant="danger rounded-0" onClick={()=>props.deleteFromLiked(props.image)}>X</Button>
-				:<Button variant="success rounded-0" onClick={downloadHandle}>D</Button>
+				?<Button variant="danger rounded-0" onClick={()=>props.deleteFromLiked(props.image)}><i class="fas fa-times-circle"></i></Button>
+				:<Button variant="light rounded-0" onClick={()=>props.addToLiked(props.image)}><i class="far fa-heart"></i></Button>
 			}
-			<Button variant="light rounded-0" onClick={()=>props.addToLiked(props.image)}>L</Button>
+			
+			<Button variant="success rounded-0" onClick={downloadHandle}><i class="fas fa-download"></i></Button>
 		</div>
 	)
 }
