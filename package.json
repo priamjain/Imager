@@ -4,7 +4,8 @@
   "description": "Image search and Save App",
   "main": "server.js",
   "scripts": {
-    "start": "cd client && npm start client"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
+    "start":"npm server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/priamjain/Imager/issues"
   },
-  "homepage": "https://github.com/priamjain/Imager#readme"
+  "homepage": "https://github.com/priamjain/Imager#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "engines":{
+    "node":"14.3.0"
+  }
 }
