@@ -22,9 +22,9 @@ function Searchbar(props) {
 		.catch((err)=>console.log(err))
 	}
 	return (
-		<div className="d-none d-flex flex-row justify-content-center p-3">
-			<Form inline style={{width:'30em'}} onSubmit={handleSubmit}>
-				<FormControl type="text" placeholder="Search..." className="w-75" onChange={(e)=>setsearchText(e.target.value)} value={searchText}></FormControl>
+		<div className="d-flex flex-row justify-content-center p-3">
+			<Form inline className='d-flex fex-row justify-content-center' style={{width:'30em'}} onSubmit={handleSubmit}>
+				<FormControl type="text" placeholder="Search..." className="w-50 mr-1" onChange={(e)=>setsearchText(e.target.value)} value={searchText}></FormControl>
 				<Button type="submit" variant="outline-success" className="w-25">Search</Button>
 			</Form>
 		</div>

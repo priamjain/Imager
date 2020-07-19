@@ -6,14 +6,14 @@ var Header = (props)=> {
 	return (
 		<div id="header" className="container ">
 			
-			<Navbar bg="transparent" expand="md"  className='flex-row justify-content-center'>
+			<Navbar bg="transparent" expand="md"  className='flex-row justify-content-around'>
 				<Navbar.Brand className='order-1'>Imager</Navbar.Brand>
 				<Nav className='order-last order-md-2'>
 					<Searchbar updateState={props.updateState}></Searchbar>
 				</Nav>
 				<Nav className='order-2 order-md-3 flex-row'>
 					<Nav.Link  
-					className='mr-sm-3 mr-md-0' 
+					className='mr-3 mr-md-0' 
 					onClick={
 						(e)=>{
 							e.preventDefault();
