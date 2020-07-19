@@ -6,7 +6,7 @@ var Header = (props)=> {
 	return (
 		<div id="header" className="container ">
 			
-			<Navbar bg="transparent" expand="md"  className='flex-row justify-content-around'>
+			<Navbar bg="transparent" expand="md"  className='flex-row justify-content-around' fixed="top">
 				<Navbar.Brand className='order-1'>Imager</Navbar.Brand>
 				<Nav className='order-last order-md-2'>
 					<Searchbar updateState={props.updateState}></Searchbar>
@@ -26,7 +26,6 @@ var Header = (props)=> {
 					
 				</Nav>
 			</Navbar>
-
 		</div>
 	)
 }

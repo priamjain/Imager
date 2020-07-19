@@ -12,7 +12,8 @@ class App extends React.Component {
 			searchResults:{},
 			liked :[],
 			isLoading:true,
-			currentPage:'Search'
+			currentPage:'Search',
+			notification:""
 		}
 	}
 
@@ -31,19 +32,21 @@ class App extends React.Component {
 				})
 		})
 	}
-	addToLiked = (image)=>this.setState((prev) => ({liked:[...prev.liked,image]}))
+	addToLiked = (image)=>{
+		if(this.state.liked.includes(image)){
+			this.setState({notification:"Already in Liked Images"})	
+		}
+		else{
+		this.setState((prev) => ({liked:[...prev.liked,image]}))
+	}
+}
 	deleteFromLiked = (image)=>{
 		this.setState(prev=>({liked:prev.liked.filter(img => img.id!==image.id)}));
 	};
 	render(){
-		if(this.state.isLoading){
-			return(<Spinner animation='border'></Spinner>)
-		}
-		else{
-			return(
+		return(
 				<div className="App">
 				<Header updateState={this.updateState} currentPage={this.state.currentPage}></Header>
-
 				<Main 
 				isLoading={this.state.isLoading}
 				currentPage={this.state.currentPage} 
@@ -53,10 +56,10 @@ class App extends React.Component {
 				deleteFromLiked={this.deleteFromLiked}
 				>
 				</Main>
+				
 			</div>
 			);
 		}
-	}
 }
 
 export default App;

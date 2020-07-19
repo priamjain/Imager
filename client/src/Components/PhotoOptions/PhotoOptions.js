@@ -26,7 +26,7 @@ function PhotoOptions(props) {
 				:<Button variant="light rounded-0" onClick={()=>props.addToLiked(props.image)}><i class="far fa-heart"></i></Button>
 			}
 			
-			<Button variant="success rounded-0" onClick={downloadHandle}><i class="fas fa-download"></i></Button>
+			<Button variant="success rounded-0" onClick={downloadHandle}><i className="fas fa-download"></i></Button>
 		</div>
 	)
 }

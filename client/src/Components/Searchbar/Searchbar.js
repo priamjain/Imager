@@ -23,9 +23,9 @@ function Searchbar(props) {
 	}
 	return (
 		<div className="d-flex flex-row justify-content-center p-3">
-			<Form inline className='d-flex fex-row justify-content-center' style={{width:'30em'}} onSubmit={handleSubmit}>
-				<FormControl type="text" placeholder="Search..." className="w-50 mr-1" onChange={(e)=>setsearchText(e.target.value)} value={searchText}></FormControl>
-				<Button type="submit" variant="outline-success" className="w-25">Search</Button>
+			<Form inline className='d-flex fex-row justify-content-center' onSubmit={handleSubmit}>
+				<FormControl type="text" placeholder="Search..." className="mr-1 ml-0" onChange={(e)=>setsearchText(e.target.value)} value={searchText}></FormControl>
+				<Button type="submit" variant="success">Search</Button>
 			</Form>
 		</div>
 	)

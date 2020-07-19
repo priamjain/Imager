@@ -23,7 +23,7 @@ function Main(props){
 			}
 		}
 		return (
-			<div id="main" className="d-flex flex-column align-items-center">
+			<div id="main" style={{marginTop:'100px'}}className="d-flex flex-column align-items-center">
 				{content()}
 			</div>
 		)
