@@ -11,7 +11,7 @@ function ImageCard(props){
 				>
 					<Card.Img src={props.image.urls.small} atl=""></Card.Img>
 					<Card.ImgOverlay className="d-flex flex-row justify-content-end">
-						<PhotoOptions image={props.image} addToLiked={props.addToLiked}></PhotoOptions>		
+						<PhotoOptions image={props.image} addToLiked={props.addToLiked} currentPage={props.currentPage}></PhotoOptions>		
 					</Card.ImgOverlay>
 			</Card>	
 	)

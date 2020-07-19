@@ -13,11 +13,11 @@ function Main(props){
 				switch (props.currentPage) {
 					case 'Liked':
 						return(
-							<MyList liked={props.liked}></MyList>
+							<MyList liked={props.liked} currentPage={props.currentPage}></MyList>
 							)
 							
 					default: 
-						return(<ImageList addToLiked={props.addToLiked} images={props.searchResults.results}></ImageList>
+						return(<ImageList addToLiked={props.addToLiked} images={props.searchResults.results} currentPage={props.currentPage}></ImageList>
 							);
 				}
 			}

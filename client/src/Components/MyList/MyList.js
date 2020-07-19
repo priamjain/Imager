@@ -6,7 +6,7 @@ function MyList(props) {
 	let allLiked = []
 	if(props.liked)
 	{
-		allLiked = props.liked.map((image)=><ImageCard image={image} key={image.id} addToLiked={props.addToLiked}></ImageCard>)
+		allLiked = props.liked.map((image)=><ImageCard image={image} key={image.id} addToLiked={props.addToLiked} currentPage={props.currentPage}></ImageCard>)
 	}
 	return (
 
