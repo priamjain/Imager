@@ -11,7 +11,7 @@ function ImageCard(props){
 				>
 					<Card.Img src={props.image.urls.small} atl=""></Card.Img>
 					<Card.ImgOverlay>
-						<PhotoOptions image={props.image} addToLiked={props.addToLiked} deleteFromLiked={props.deleteFromLiked} currentPage={props.currentPage}></PhotoOptions>		
+						<PhotoOptions liked={props.liked} image={props.image} addToLiked={props.addToLiked} deleteFromLiked={props.deleteFromLiked} currentPage={props.currentPage}></PhotoOptions>		
 					</Card.ImgOverlay>
 			</Card>	
 	)

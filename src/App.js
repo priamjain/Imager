@@ -3,7 +3,6 @@ import './App.css';
 import Header from './Components/Header/Header'
 import Main from './Components/Main/Main'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {Spinner} from 'react-bootstrap'
 class App extends React.Component {
 	constructor(props) {
 		super(props)

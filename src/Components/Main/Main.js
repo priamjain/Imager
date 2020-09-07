@@ -17,7 +17,7 @@ function Main(props){
 							)
 							
 					default: 
-						return(<ImageList addToLiked={props.addToLiked} images={props.searchResults.results} currentPage={props.currentPage}></ImageList>
+						return(<ImageList liked={props.liked} addToLiked={props.addToLiked} images={props.searchResults.results} currentPage={props.currentPage}></ImageList>
 							);
 				}
 			}

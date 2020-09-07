@@ -22,8 +22,8 @@ function PhotoOptions(props) {
 		<div className="d-flex flex-row mt-auto justify-content-between">
 			{
 				props.currentPage === 'Liked'
-				?<Button variant="danger rounded-0" onClick={()=>props.deleteFromLiked(props.image)}><i class="fas fa-times-circle"></i></Button>
-				:<Button variant="light rounded-0" onClick={()=>props.addToLiked(props.image)}><i class="far fa-heart"></i></Button>
+				?<Button variant="danger rounded-0" onClick={()=>props.deleteFromLiked(props.image)}><i className="fas fa-times-circle"></i></Button>
+				:<Button variant={`${props.liked?"danger":"light"} rounded-0`} onClick={()=>props.addToLiked(props.image)}><i className="far fa-heart"></i></Button>
 			}
 			
 			<Button variant="success rounded-0" onClick={downloadHandle}><i className="fas fa-download"></i></Button>
